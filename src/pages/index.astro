@@ -3,19 +3,24 @@ import Layout from "@/layouts/Layout.astro"
 import Bento from "@/components/Bento.astro"
 import Item from "@/components/Item.astro"
 import WebDev from "@/components/Bento/WebDev.astro"
-import Foto from "@/components/Bento/Foto.astro"
+import Photo from "@/components/Bento/Photo.astro"
 import ToggleTheme from "@/components/Bento/ToggleTheme.astro"
+import Academics from "@/components/Bento/Academics.astro"
+import Freelancing from "@/components/Bento/Freelancing.astro"
+import Experience from "@/components/Bento/Experience.astro"
+import Social from "@/components/Bento/Social.astro"
+import TechStack from "@/components/Bento/TechStack.astro"
 ---
 
 <Layout>
   <Bento>
     <WebDev />
-    <Item>Estudiante de Ingenieria</Item>
+    <Academics />
     <ToggleTheme />
-    <Foto />
-    <Item>Experiencia</Item>
-    <Item>Social</Item>
-    <Item>Freelancing</Item>
-    <Item>Techstack</Item>
+    <Photo />
+    <Freelancing />
+    <Experience />
+    <Social />
+    <TechStack />
   </Bento>
 </Layout>
