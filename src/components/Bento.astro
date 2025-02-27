@@ -1,0 +1,55 @@
+---
+import Item from "@/components/Item.astro"
+---
+
+<main class="bento">
+  <slot />
+</main>
+<style is:global>
+  .bento {
+    --main-width: 1280px;
+    --main-height: 800px;
+    --main-gap: 16px;
+    --columns: 8;
+    --rows: 5;
+    width: var(--main-width);
+    height: var(--main-height);
+    display: grid;
+    gap: var(--main-gap);
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(
+      var(--rows),
+      calc(var(--main-height) / var(--rows) - var(--main-gap))
+    );
+    grid-template-areas:
+      "webDev webDev webDev academics academics academics academics theme"
+      "webDev webDev webDev photo freelancing freelancing freelancing freelancing"
+      "experience experience social social freelancing freelancing freelancing freelancing"
+      "experience experience social social freelancing freelancing freelancing freelancing"
+      "experience experience techstack techstack techstack techstack techstack techstack";
+  }
+  .bento .item:nth-child(1) {
+    grid-area: webDev;
+  }
+  .bento .item:nth-child(2) {
+    grid-area: academics;
+  }
+  .bento .item:nth-child(3) {
+    grid-area: theme;
+  }
+  .bento .item:nth-child(4) {
+    grid-area: photo;
+  }
+  .bento .item:nth-child(5) {
+    grid-area: freelancing;
+  }
+  .bento .item:nth-child(6) {
+    grid-area: experience;
+  }
+  .bento .item:nth-child(7) {
+    grid-area: social;
+  }
+  .bento .item:nth-child(8) {
+    grid-area: techstack;
+  }
+</style>
