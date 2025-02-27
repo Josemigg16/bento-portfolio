@@ -15,14 +15,21 @@ import "@fontsource/geist-mono"
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       document.documentElement.classList.toggle(
         "dark",
-        localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
+        localStorage.astroErrorOverlayTheme === "dark" ||
+          (!("astroErrorOverlayTheme" in localStorage) &&
             window.matchMedia("(prefers-color-scheme: dark)").matches)
       )
-      // Whenever the user explicitly chooses light mode
-      localStorage.astroErrorOverlayTheme = "light"
-      // Whenever the user explicitly chooses dark mode
-      localStorage.astroErrorOverlayTheme = "dark"
+      if (
+        localStorage.astroErrorOverlayTheme === "dark" ||
+        (!("astroErrorOverlayTheme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        // Whenever the user explicitly chooses light mode
+        localStorage.astroErrorOverlayTheme = "dark"
+      } else {
+        // Whenever the user explicitly chooses dark mode
+        localStorage.astroErrorOverlayTheme = "light"
+      }
     </script>
     <title>Astro Basics</title>
   </head>
