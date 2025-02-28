@@ -2,6 +2,7 @@
 import "./src/styles/global.css"
 import "@fontsource/inter"
 import "@fontsource/geist-mono"
+import { ClientRouter } from "astro:transitions"
 ---
 
 <!doctype html>
@@ -12,29 +13,32 @@ import "@fontsource/geist-mono"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      document.documentElement.classList.toggle(
-        "dark",
-        localStorage.astroErrorOverlayTheme === "dark" ||
+      document.addEventListener("astro:page-load", () => {
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        document.documentElement.classList.toggle(
+          "dark",
+          localStorage.astroErrorOverlayTheme === "dark" ||
+            (!("astroErrorOverlayTheme" in localStorage) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+        if (
+          localStorage.astroErrorOverlayTheme === "dark" ||
           (!("astroErrorOverlayTheme" in localStorage) &&
             window.matchMedia("(prefers-color-scheme: dark)").matches)
-      )
-      if (
-        localStorage.astroErrorOverlayTheme === "dark" ||
-        (!("astroErrorOverlayTheme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        // Whenever the user explicitly chooses light mode
-        localStorage.astroErrorOverlayTheme = "dark"
-      } else {
-        // Whenever the user explicitly chooses dark mode
-        localStorage.astroErrorOverlayTheme = "light"
-      }
+        ) {
+          // Whenever the user explicitly chooses light mode
+          localStorage.astroErrorOverlayTheme = "dark"
+        } else {
+          // Whenever the user explicitly chooses dark mode
+          localStorage.astroErrorOverlayTheme = "light"
+        }
+      })
     </script>
     <title>Astro Basics</title>
   </head>
   <body>
     <slot />
+    <ClientRouter />
   </body>
 </html>
 
