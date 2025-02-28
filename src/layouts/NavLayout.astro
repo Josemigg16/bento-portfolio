@@ -1,5 +1,6 @@
 ---
 import ToggleTheme from "@/components/Bento/ToggleTheme.astro"
+import Arrow from "@/components/Icons/Arrow.astro"
 import Github from "@/components/Icons/Github.astro"
 import LinkedIn from "@/components/Icons/LinkedIn.astro"
 import Upwork from "@/components/Icons/Upwork.astro"
@@ -11,8 +12,8 @@ import Item from "@/components/Item.astro"
     class="absolute w-[60px] -right-[70px] top-[20px] flex flex-col gap-4 h-[calc(100%-20px)] rounded-[20px]"
   >
     <Item>
-      <a href="/">
-        <img src="/arrow.svg" alt="volver" class="rotate-270" />
+      <a href="/" class="grid place-content-center w-full h-full pl-4 rotate-270 p-1">
+        <Arrow />
       </a>
     </Item>
     <ToggleTheme />
@@ -37,7 +38,7 @@ import Item from "@/components/Item.astro"
     <Item transition="linkedin">
       <a
         class="rounded-[20px] overflow-hidden"
-        href="https://linkedin.com/jose-m-gomez"
+        href="https://www.linkedin.com/in/josem-gomez"
         target="_blank"
       >
         <LinkedIn />
