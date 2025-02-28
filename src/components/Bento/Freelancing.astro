@@ -3,16 +3,26 @@ import Item from "../Item.astro"
 ---
 
 <Item>
-  <div class="p-4">
-    <h2 class="dark:text-yellow-300 text-4xl font-bold">Freelancing</h2>
-    <p>Ordena tu Aplicación o Página web</p>
-    <div class="mt-4">
-      <li>Diseño</li>
-      <li>Animaciones</li>
-      <li>Páginas estáticas</li>
-      <li>Páginas dinámicas</li>
-      <li>API REST</li>
-      <li>GraphQL</li>
-    </div>
-  </div>
+  <a class="flex h-full">
+    <article class="p-4">
+      <h2 class="dark:text-yellow-300 text-4xl font-bold">Freelancing</h2>
+      <p>Ordena tu Aplicación o Página web</p>
+      <div class="mt-4">
+        <li>Diseño</li>
+        <li>Animaciones</li>
+        <li>Páginas estáticas</li>
+        <li>Páginas dinámicas</li>
+        <li>API REST</li>
+        <li>GraphQL</li>
+      </div>
+    </article>
+    <div class="image h-full w-1/2 ml-auto"></div>
+  </a>
 </Item>
+<style>
+  .image {
+    background-image: url("/manLaptop.jpg");
+    background-size: cover;
+    transform: scaleX(-1);
+  }
+</style>
