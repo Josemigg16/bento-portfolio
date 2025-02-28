@@ -15,18 +15,26 @@ import Item from "../Item.astro"
         src="./sun.png"
         alt="sun"
       />
-      <img class="absolute inset-0 dark:left-full transition-all cursor-pointer" src="./moon.png" alt="moon" />
+      <img
+        class="absolute inset-0 dark:left-full transition-all cursor-pointer"
+        src="./moon.png"
+        alt="moon"
+      />
     </div>
   </button>
   <script>
-    document.getElementById("theme-selector")?.addEventListener("click", () => {
-      if (localStorage.astroErrorOverlayTheme === "dark") {
-        localStorage.astroErrorOverlayTheme = "light"
-        document.documentElement.classList.remove("dark")
-      } else {
-        localStorage.astroErrorOverlayTheme = "dark"
-        document.documentElement.classList.add("dark")
-      }
+    document.addEventListener("astro:page-load", () => {
+      document
+        .getElementById("theme-selector")
+        ?.addEventListener("click", () => {
+          if (localStorage.astroErrorOverlayTheme === "dark") {
+            localStorage.astroErrorOverlayTheme = "light"
+            document.documentElement.classList.remove("dark")
+          } else {
+            localStorage.astroErrorOverlayTheme = "dark"
+            document.documentElement.classList.add("dark")
+          }
+        })
     })
   </script>
 </Item>
