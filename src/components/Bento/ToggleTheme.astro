@@ -9,10 +9,15 @@ import Item from "../Item.astro"
         class="hidden dark:inline">dark</span
       > mode</span
     >
-    <img class="hidden dark:inline" src="./sun.png" alt="sun" />
-    <img class="dark:hidden" src="./moon.png" alt="moon" />
+    <div class="flex">
+      <img
+        class="absolute inset-0 -left-full dark:left-0 transition-all cursor-pointer"
+        src="./sun.png"
+        alt="sun"
+      />
+      <img class="absolute inset-0 dark:left-full transition-all cursor-pointer" src="./moon.png" alt="moon" />
+    </div>
   </button>
-
   <script>
     document.getElementById("theme-selector")?.addEventListener("click", () => {
       if (localStorage.astroErrorOverlayTheme === "dark") {

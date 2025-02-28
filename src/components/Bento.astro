@@ -8,7 +8,7 @@ import Item from "@/components/Item.astro"
 <style is:global>
   .bento {
     --main-width: 1280px;
-    --main-height: 800px;
+    --main-height: 780px;
     --main-gap: 16px;
     --columns: 8;
     --rows: 5;
@@ -24,8 +24,8 @@ import Item from "@/components/Item.astro"
     grid-template-areas:
       "webDev webDev webDev academics academics academics academics theme"
       "webDev webDev webDev photo freelancing freelancing freelancing freelancing"
-      "experience experience social social freelancing freelancing freelancing freelancing"
-      "experience experience social social freelancing freelancing freelancing freelancing"
+      "experience experience upwork github freelancing freelancing freelancing freelancing"
+      "experience experience linkedIn email freelancing freelancing freelancing freelancing"
       "experience experience techstack techstack techstack techstack techstack techstack";
   }
   .bento .item:nth-child(1) {
@@ -47,9 +47,18 @@ import Item from "@/components/Item.astro"
     grid-area: experience;
   }
   .bento .item:nth-child(7) {
-    grid-area: social;
+    grid-area: upwork;
   }
   .bento .item:nth-child(8) {
+    grid-area: github;
+  }
+  .bento .item:nth-child(9) {
+    grid-area: linkedIn;
+  }
+  .bento .item:nth-child(10) {
+    grid-area: email;
+  }
+  .bento .item:nth-child(11) {
     grid-area: techstack;
   }
 </style>
