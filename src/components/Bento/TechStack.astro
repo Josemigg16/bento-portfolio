@@ -10,31 +10,71 @@ import TailwindIcon from "../Icons/tech/TailwindIcon.astro"
 import DotEnvIcon from "../Icons/tech/DotEnvIcon.astro"
 import StrapiIcon from "../Icons/tech/StrapiIcon.astro"
 import Item from "../Item.astro"
+import MariaDBIcon from "../Icons/tech/MariaDBIcon.astro"
+import RedisIcon from "../Icons/tech/RedisIcon.astro"
+import FlaskIcon from "../Icons/tech/FlaskIcon.astro"
+import NestjsIcon from "../Icons/tech/NestjsIcon.astro"
+import CSSIcon from "../Icons/tech/CSSIcon.astro"
+import HTMLIcon from "../Icons/tech/HTMLIcon.astro"
+import JavaScriptIcon from "../Icons/tech/JavaScriptIcon.astro"
+import RemixIcon from "../Icons/tech/RemixIcon.astro"
+import NuxtIcon from "../Icons/tech/NuxtIcon.astro"
+import JWTIcon from "../Icons/tech/JWTIcon.astro"
+import GraphQLIcon from "../Icons/tech/GraphQLIcon.astro"
+import TypeScriptIcon from "../Icons/tech/TypeScriptIcon.astro"
+import Vercel from "../Icons/tech/Vercel.astro"
+import GitIcon from "../Icons/tech/GitIcon.astro"
+import DockerIcon from "../Icons/tech/DockerIcon.astro"
 ---
 
-<Item
-  ><div class="relative w-full h-full overflow-hidden p-2">
-    <div class="icon"><AstroIcon /></div>
-    <div class="icon"><ExpressjsIcon /></div>
-    <div class="icon"><NextIcon /></div>
-    <div class="icon"><NodeIcon /></div>
-    <div class="icon"><PostgresIcon /></div>
-    <div class="icon"><PrismaIcon /></div>
-    <div class="icon"><ReactIcon /></div>
-    <div class="icon"><TailwindIcon /></div>
-    <div class="icon"><DotEnvIcon /></div>
-    <div class="icon"><StrapiIcon /></div>
-  </div></Item
->
+<Item>
+  <div class="flex flex-col h-full">
+    <div class="relative w-full overflow-hidden h-1/2 p-2">
+      <div class="icon"><AstroIcon /></div>
+      <div class="icon"><ExpressjsIcon /></div>
+      <div class="icon"><NextIcon /></div>
+      <div class="icon"><NodeIcon /></div>
+      <div class="icon"><PostgresIcon /></div>
+      <div class="icon"><PrismaIcon /></div>
+      <div class="icon"><ReactIcon /></div>
+      <div class="icon"><TailwindIcon /></div>
+      <div class="icon"><DotEnvIcon /></div>
+      <div class="icon"><StrapiIcon /></div>
+      <div class="icon"><CSSIcon /></div>
+      <div class="icon"><HTMLIcon /></div>
+      <div class="icon"><DockerIcon /></div>
+    </div>
+    <div class="goRight relative w-full overflow-hidden h-1/2 p-2">
+      <div class="icon"><MariaDBIcon /></div>
+      <div class="icon"><RedisIcon /></div>
+      <div class="icon"><FlaskIcon /></div>
+      <div class="icon"><NestjsIcon /></div>
+      <div class="icon"><RemixIcon /></div>
+      <div class="icon"><NuxtIcon /></div>
+      <div class="icon"><JWTIcon /></div>
+      <div class="icon"><GraphQLIcon /></div>
+      <div class="icon"><TypeScriptIcon /></div>
+      <div class="icon"><img src="/tech/python.svg" alt="python logo" /></div>
+      <div class="icon"><Vercel /></div>
+      <div class="icon"><GitIcon /></div>
+      <div class="icon"><img src="/tech/vite.svg" alt="vite logo" /></div>
+    </div>
+  </div>
+</Item>
 <style>
   :root {
     --duration: 30s;
-    --icons-count: 10;
+    --icons-count: 13;
   }
 
   @keyframes scrollToLeft {
     to {
       left: -200px;
+    }
+  }
+  @keyframes scrollToRight {
+    to {
+      right: -200px;
     }
   }
   .icon {
@@ -43,12 +83,19 @@ import Item from "../Item.astro"
     border-radius: 6px;
     position: absolute;
     left: 100%;
+    right: auto;
     animation-name: scrollToLeft;
     animation-duration: var(--duration);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 
+  .goRight .icon {
+    left: auto;
+    right: 100%;
+    animation-name: scrollToRight;
+  }
+  
   .icon:nth-child(1) {
     animation-delay: calc(
       var(--duration) / var(--icons-count) * (var(--icons-count) - 1) * -1
@@ -84,7 +131,7 @@ import Item from "../Item.astro"
       var(--duration) / var(--icons-count) * (var(--icons-count) - 7) * -1
     );
   }
-  .icon:nth-child(var(--icons-count)) {
+  .icon:nth-child(8) {
     animation-delay: calc(
       var(--duration) / var(--icons-count) * (var(--icons-count) - 8) * -1
     );
@@ -97,6 +144,21 @@ import Item from "../Item.astro"
   .icon:nth-child(10) {
     animation-delay: calc(
       var(--duration) / var(--icons-count) * (var(--icons-count) - 10) * -1
+    );
+  }
+  .icon:nth-child(11) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 11) * -1
+    );
+  }
+  .icon:nth-child(12) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 12) * -1
+    );
+  }
+  .icon:nth-child(13) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 13) * -1
     );
   }
 </style>
