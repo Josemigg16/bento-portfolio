@@ -1,5 +1,102 @@
 ---
+import AstroIcon from "../Icons/tech/AstroIcon.astro"
+import ExpressjsIcon from "../Icons/tech/ExpressjsIcon.astro"
+import NextIcon from "../Icons/tech/NextIcon.astro"
+import NodeIcon from "../Icons/tech/NodeIcon.astro"
+import PostgresIcon from "../Icons/tech/PostgresIcon.astro"
+import PrismaIcon from "../Icons/tech/PrismaIcon.astro"
+import ReactIcon from "../Icons/tech/ReactIcon.astro"
+import TailwindIcon from "../Icons/tech/TailwindIcon.astro"
+import DotEnvIcon from "../Icons/tech/DotEnvIcon.astro"
+import StrapiIcon from "../Icons/tech/StrapiIcon.astro"
 import Item from "../Item.astro"
 ---
 
-<Item>Techstack</Item>
+<Item
+  ><div class="relative w-full h-full overflow-hidden p-2">
+    <div class="icon"><AstroIcon /></div>
+    <div class="icon"><ExpressjsIcon /></div>
+    <div class="icon"><NextIcon /></div>
+    <div class="icon"><NodeIcon /></div>
+    <div class="icon"><PostgresIcon /></div>
+    <div class="icon"><PrismaIcon /></div>
+    <div class="icon"><ReactIcon /></div>
+    <div class="icon"><TailwindIcon /></div>
+    <div class="icon"><DotEnvIcon /></div>
+    <div class="icon"><StrapiIcon /></div>
+  </div></Item
+>
+<style>
+  :root {
+    --duration: 30s;
+    --icons-count: 10;
+  }
+
+  @keyframes scrollToLeft {
+    to {
+      left: -200px;
+    }
+  }
+  .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    position: absolute;
+    left: 100%;
+    animation-name: scrollToLeft;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .icon:nth-child(1) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 1) * -1
+    );
+  }
+  .icon:nth-child(2) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 2) * -1
+    );
+  }
+  .icon:nth-child(3) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 3) * -1
+    );
+  }
+  .icon:nth-child(4) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 4) * -1
+    );
+  }
+  .icon:nth-child(5) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 5) * -1
+    );
+  }
+  .icon:nth-child(6) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 6) * -1
+    );
+  }
+  .icon:nth-child(7) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 7) * -1
+    );
+  }
+  .icon:nth-child(var(--icons-count)) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 8) * -1
+    );
+  }
+  .icon:nth-child(9) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 9) * -1
+    );
+  }
+  .icon:nth-child(10) {
+    animation-delay: calc(
+      var(--duration) / var(--icons-count) * (var(--icons-count) - 10) * -1
+    );
+  }
+</style>
