@@ -1,0 +1,59 @@
+---
+import ToggleTheme from "@/components/Bento/ToggleTheme.astro"
+import Github from "@/components/Icons/Github.astro"
+import LinkedIn from "@/components/Icons/LinkedIn.astro"
+import Upwork from "@/components/Icons/Upwork.astro"
+import Item from "@/components/Item.astro"
+---
+
+<div class="relative">
+  <aside
+    class="absolute w-[60px] -right-[70px] top-[20px] flex flex-col gap-4 h-[calc(100%-20px)] rounded-[20px]"
+  >
+    <Item>
+      <a href="/">
+        <img src="/arrow.svg" alt="volver" class="rotate-270" />
+      </a>
+    </Item>
+    <ToggleTheme />
+    <Item transition="upwork">
+      <a
+        class="rounded-[20px] overflow-hidden hover:scale-110"
+        href="https://upwork.com"
+        target="_blank"
+      >
+        <Upwork />
+      </a>
+    </Item>
+    <Item transition="github">
+      <a
+        class="rounded-[20px] overflow-hidden"
+        href="https://github.com/Josemigg16"
+        target="_blank"
+      >
+        <Github />
+      </a>
+    </Item>
+    <Item transition="linkedin">
+      <a
+        class="rounded-[20px] overflow-hidden"
+        href="https://linkedin.com/jose-m-gomez"
+        target="_blank"
+      >
+        <LinkedIn />
+      </a>
+    </Item>
+    <Item transition="gmail">
+      <a class="rounded-[20px] overflow-hidden" href="/mail" target="_blank">
+        <img
+          class="bg-white scale-130"
+          src="/social/gmail.png"
+          alt="gmail image"
+        />
+      </a>
+    </Item>
+  </aside>
+  <main><slot /></main>
+</div>
+
+<style></style>

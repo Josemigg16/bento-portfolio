@@ -3,7 +3,7 @@ import Item from "../Item.astro"
 ---
 
 <Item
-  ><div class="flex justify-between">
+  ><a href="/about" class="flex justify-between">
     <div class="p-4">
       <h2 class="dark:text-green-300 text-3xl font-bold">
         Ingeniería En Computación
@@ -14,7 +14,12 @@ import Item from "../Item.astro"
       </div>
     </div>
     <picture class="bg-white">
-      <img class="w-36 p-4" src="/social/uft.png" alt="uft image" />
+      <img
+        transition:name="uft"
+        class="w-36 p-4"
+        src="/social/uft.png"
+        alt="uft image"
+      />
     </picture>
-  </div></Item
+  </a></Item
 >

@@ -1,13 +1,25 @@
 ---
-const { color3d = "#0b0e39" } = Astro.props
+const { color3d = "#0b0e39", transition, hover } = Astro.props
 ---
 
-<article
-  class="item w-full overflow-hidden bg-[#D9D9D9] dark:bg-[hsl(212,64%,14%)] rounded-[20px] border border-[var(--3d)]"
-  style={`--3d: ${color3d}`}
->
-  <slot />
-</article>
+{
+  transition ? (
+    <article
+      transition:name={transition}
+      class="item w-full overflow-hidden bg-[#D9D9D9] dark:bg-[hsl(212,64%,14%)] rounded-[20px] border border-[var(--3d)]"
+      style={`--3d: ${color3d}`}
+    >
+      <slot />
+    </article>
+  ) : (
+    <article
+      class="item w-full overflow-hidden bg-[#D9D9D9] dark:bg-[hsl(212,64%,14%)] rounded-[20px] border border-[var(--3d)]"
+      style={`--3d: ${color3d}`}
+    >
+      <slot />
+    </article>
+  )
+}
 <style>
   .item {
     transition: all 0.25s ease;
@@ -15,16 +27,33 @@ const { color3d = "#0b0e39" } = Astro.props
     translate: 0px -3px;
   }
   .item:hover {
-    box-shadow:
-      0px 8px var(--3d),
-      0 0 8px 2px #0e498b58;
+    box-shadow: 0px 8px var(--3d);
     translate: 0px -6px;
   }
 
   .item:active {
     translate: 0px 0px;
-    box-shadow:
-      0px 1px var(--3d),
-      0 0 8px 2px #0e498b58;
+    box-shadow: 0px 1px var(--3d);
+  }
+
+  html.dark {
+    .item {
+      transition: all 0.25s ease;
+      box-shadow: 0px 5px var(--3d);
+      translate: 0px -3px;
+    }
+    .item:hover {
+      box-shadow:
+        0px 8px var(--3d),
+        0 0 8px 2px #0e498b58;
+      translate: 0px -6px;
+    }
+
+    .item:active {
+      translate: 0px 0px;
+      box-shadow:
+        0px 1px var(--3d),
+        0 0 8px 2px #0e498b58;
+    }
   }
 </style>

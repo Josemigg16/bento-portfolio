@@ -3,14 +3,18 @@ import Item from "../Item.astro"
 ---
 
 <Item>
-  <div class="webDev flex flex-col justify-between h-full px-4 py-6">
+  <a
+    transition:name="webDev"
+    class="webDev flex flex-col justify-between h-full px-4 py-6"
+    href="/about"
+  >
     <h1 class="text-8xl font-black w-fit mx-auto">WebDev</h1>
     <div class="h-[100px]">
       <li>Frontend</li>
       <li>Backend</li>
       <li>Inteligencia Artificial</li>
     </div>
-  </div>
+  </a>
 </Item>
 <style is:global>
   .webDev h1 {
