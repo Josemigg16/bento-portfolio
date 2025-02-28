@@ -3,7 +3,21 @@ import Item from "../Item.astro"
 ---
 
 <Item
-  ><div class="p-4">
-    <h2 class="dark:text-green-300 text-3xl font-bold">Experiencia</h2>
-  </div></Item
+  ><a class="flex flex-col justify-between h-full">
+    <article class="p-4">
+      <h2 class="dark:text-green-300 text-3xl font-bold">Experiencia</h2>
+      <div class="mt-3">
+        <li>Más de dos años en el mundo de la programación</li>
+        <li>Proyectos realizados con todo tipo de tecnologías</li>
+        <li>Proyectos propios, grupales y universitarios</li>
+      </div>
+    </article>
+    <div class="image w-full h-1/2"></div>
+  </a></Item
 >
+<style>
+  .image {
+    background-image: url("/codeRain.jpg");
+    background-size: cover;
+  }
+</style>
