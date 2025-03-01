@@ -3,7 +3,7 @@ import Item from "../Item.astro"
 ---
 
 <Item
-  ><a href="/about" class="flex justify-between">
+  ><a href="/about" class="flex justify-between h-full">
     <div class="p-4">
       <h2 class="dark:text-green-300 text-3xl font-bold">
         Ingeniería En Computación
@@ -13,7 +13,7 @@ import Item from "../Item.astro"
         <li>Promedio académico (19.00/20.00)</li>
       </div>
     </div>
-    <picture class="bg-white">
+    <picture class="bg-white sm:flex items-center h-full hidden">
       <img
         transition:name="uft"
         class="w-36 p-4"

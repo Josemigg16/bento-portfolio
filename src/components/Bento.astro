@@ -13,7 +13,6 @@ import Item from "@/components/Item.astro"
     --columns: 8;
     --rows: 5;
     width: var(--main-width);
-    height: var(--main-height);
     display: grid;
     gap: var(--main-gap);
     grid-template-columns: repeat(var(--columns), 1fr);
@@ -60,5 +59,85 @@ import Item from "@/components/Item.astro"
   }
   .bento .item:nth-child(11) {
     grid-area: techstack;
+  }
+
+  @media (max-width: 1536px) {
+    .bento {
+      --rows: 9;
+      --main-width: 780px;
+      --main-height: 888px;
+      margin-top: 250px;
+      margin-bottom: 100px;
+      grid-template-areas:
+        "webDev webDev webDev webDev webDev webDev theme theme"
+        "webDev webDev webDev webDev webDev webDev theme theme"
+        "photo photo academics academics academics academics academics upwork"
+        "photo photo academics academics academics academics academics github"
+        "freelancing freelancing freelancing freelancing freelancing freelancing freelancing linkedIn"
+        "freelancing freelancing freelancing freelancing freelancing freelancing freelancing email"
+        "experience experience experience experience experience experience experience experience"
+        "experience experience experience experience experience experience experience experience"
+        "techstack techstack techstack techstack techstack techstack techstack techstack"
+        "techstack techstack techstack techstack techstack techstack techstack techstack"
+        "techstack techstack techstack techstack techstack techstack techstack techstack";
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .bento {
+      --rows: 14;
+      --main-width: 500px;
+      --main-height: 888px;
+      margin-top: 200px;
+      margin-bottom: 100px;
+      grid-template-areas:
+        "webDev webDev webDev webDev webDev webDev webDev webDev"
+        "webDev webDev webDev webDev webDev webDev webDev webDev"
+        "webDev webDev webDev webDev webDev webDev webDev webDev"
+        "academics academics academics academics academics academics academics theme"
+        "academics academics academics academics academics academics academics photo"
+        "academics academics academics academics academics academics academics upwork"
+        "freelancing freelancing freelancing freelancing freelancing freelancing freelancing github"
+        "freelancing freelancing freelancing freelancing freelancing freelancing freelancing linkedIn"
+        "freelancing freelancing freelancing freelancing freelancing freelancing freelancing email"
+        "experience experience experience experience experience experience experience experience"
+        "experience experience experience experience experience experience experience experience"
+        "techstack techstack techstack techstack techstack techstack techstack techstack"
+        "techstack techstack techstack techstack techstack techstack techstack techstack"
+        "techstack techstack techstack techstack techstack techstack techstack techstack";
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bento {
+      --rows: 22;
+      --main-width: 315px;
+      --main-height: 888px;
+      margin-top: 200px;
+      margin-bottom: 100px;
+      grid-template-areas:
+        "webDev webDev webDev webDev webDev webDev webDev webDev"
+        "webDev webDev webDev webDev webDev webDev webDev webDev"
+        "webDev webDev webDev webDev webDev webDev webDev webDev"
+        "academics academics academics academics academics academics theme theme"
+        "academics academics academics academics academics academics theme theme"
+        "academics academics academics academics academics academics photo photo"
+        "academics academics academics academics academics academics photo photo"
+        "academics academics academics academics academics academics upwork upwork"
+        "academics academics academics academics academics academics upwork upwork"
+        "freelancing freelancing freelancing freelancing freelancing freelancing github github"
+        "freelancing freelancing freelancing freelancing freelancing freelancing github github"
+        "freelancing freelancing freelancing freelancing freelancing freelancing linkedIn linkedIn"
+        "freelancing freelancing freelancing freelancing freelancing freelancing linkedIn linkedIn"
+        "freelancing freelancing freelancing freelancing freelancing freelancing email email"
+        "freelancing freelancing freelancing freelancing freelancing freelancing email email"
+        "experience experience experience experience experience experience experience experience"
+        "experience experience experience experience experience experience experience experience"
+        "experience experience experience experience experience experience experience experience"
+        "experience experience experience experience experience experience experience experience"
+        "techstack techstack techstack techstack techstack techstack techstack techstack"
+        "techstack techstack techstack techstack techstack techstack techstack techstack"
+        "techstack techstack techstack techstack techstack techstack techstack techstack";
+    }
   }
 </style>

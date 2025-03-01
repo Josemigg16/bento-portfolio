@@ -3,4 +3,5 @@
 body {
     @apply bg-gradient-to-b from-20% from-white to-[#8e8e8e] dark:from-[#000626] dark:to-black;
     @apply dark:text-[rgba(255,255,255,.9)];
+    background-attachment: fixed;
 }
