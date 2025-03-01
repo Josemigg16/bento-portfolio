@@ -7,12 +7,15 @@ import Upwork from "@/components/Icons/Upwork.astro"
 import Item from "@/components/Item.astro"
 ---
 
-<div class="relative">
+<div class="relative mx-4">
   <aside
-    class="absolute w-[60px] -right-[70px] top-[20px] flex flex-col gap-4 h-[calc(100%-20px)] rounded-[20px]"
+    class="lg:absolute lg:w-[60px] lg:-right-[70px] lg:top-[20px] flex lg:flex-col gap-4 lg:h-[calc(100%-20px)] rounded-[20px] [&>article]:w-[50px] [&>article]:h-[50px] mb-2 lg:mb-0 justify-center lg:justify-start flex-wrap mt-[600px] sm:mt-[150px] w-[200px] mx-auto"
   >
     <Item>
-      <a href="/" class="grid place-content-center w-full h-full pl-4 rotate-270 p-1">
+      <a
+        href="/"
+        class="grid place-content-center w-full h-full pl-4 rotate-270 p-1"
+      >
         <Arrow />
       </a>
     </Item>
@@ -54,7 +57,7 @@ import Item from "@/components/Item.astro"
       </a>
     </Item>
   </aside>
-  <main><slot /></main>
+  <slot />
 </div>
 
 <style></style>

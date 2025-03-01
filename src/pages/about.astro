@@ -8,9 +8,9 @@ import NavLayout from "@/layouts/NavLayout.astro"
   <NavLayout>
     <div
       transition:name="webDev"
-      class="webDev flex flex-col h-[800px] px-4 py-6 w-[700px] overflow-hidden bg-[#D9D9D9] dark:bg-[hsl(212,64%,14%)] rounded-[20px] border border-[#0b0e39] gap-6"
+      class="webDev flex flex-col px-4 py-6 max-w-[315px] sm:max-w-[500px] lg:max-w-[700px] overflow-hidden bg-[#D9D9D9] dark:bg-[hsl(212,64%,14%)] rounded-[20px] border border-[#0b0e39] gap-6"
     >
-      <h1 class="text-8xl font-black w-fit mx-auto mb-2">WebDev</h1>
+      <h1 class="text-6xl sm:text-8xl font-black w-fit mx-auto mb-2">WebDev</h1>
       <section class="border-t border-[#0b0e39] pt-6 pb-2 px-4">
         <div class="flex">
           <img
@@ -58,6 +58,8 @@ import NavLayout from "@/layouts/NavLayout.astro"
   </NavLayout>
 </Layout>
 <style is:global>
+  .webDev {
+  }
   h1 {
     background-image: linear-gradient(to right, #6a11cb, #2575fc);
     background-clip: text; /* Recorta el fondo al texto */
