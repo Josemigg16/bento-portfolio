@@ -1,8 +1,4 @@
----
-import Item from "@/components/Item.astro"
----
-
-<main class="bento">
+<main class="bento mx-auto pt-20 pb-4">
   <slot />
 </main>
 <style is:global>
@@ -66,8 +62,6 @@ import Item from "@/components/Item.astro"
       --rows: 9;
       --main-width: 780px;
       --main-height: 888px;
-      margin-top: 250px;
-      margin-bottom: 100px;
       grid-template-areas:
         "webDev webDev webDev webDev webDev webDev theme theme"
         "webDev webDev webDev webDev webDev webDev theme theme"
@@ -88,8 +82,6 @@ import Item from "@/components/Item.astro"
       --rows: 14;
       --main-width: 500px;
       --main-height: 888px;
-      margin-top: 200px;
-      margin-bottom: 100px;
       grid-template-areas:
         "webDev webDev webDev webDev webDev webDev webDev webDev"
         "webDev webDev webDev webDev webDev webDev webDev webDev"
@@ -113,8 +105,6 @@ import Item from "@/components/Item.astro"
       --rows: 22;
       --main-width: 315px;
       --main-height: 888px;
-      margin-top: 200px;
-      margin-bottom: 100px;
       grid-template-areas:
         "webDev webDev webDev webDev webDev webDev webDev webDev"
         "webDev webDev webDev webDev webDev webDev webDev webDev"
