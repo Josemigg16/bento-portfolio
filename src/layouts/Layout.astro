@@ -3,34 +3,40 @@ import "./src/styles/global.css"
 import "@fontsource/inter"
 import "@fontsource/geist-mono"
 import { ClientRouter } from "astro:transitions"
+import { actions } from "astro:actions"
+
+console.log(Astro.cookies.get("theme")?.value)
+const theme = Astro.cookies.get("theme")?.value
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class={theme === "dark" ? "dark" : ""}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <script>
-      document.addEventListener("astro:page-load", () => {
+      import { actions } from "astro:actions"
+      document.addEventListener("astro:page-load", async () => {
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const theme = await actions.getTheme()
         document.documentElement.classList.toggle(
           "dark",
-          localStorage.astroErrorOverlayTheme === "dark" ||
-            (!("astroErrorOverlayTheme" in localStorage) &&
+          theme.data === "dark" ||
+            (!theme.data &&
               window.matchMedia("(prefers-color-scheme: dark)").matches)
         )
         if (
-          localStorage.astroErrorOverlayTheme === "dark" ||
-          (!("astroErrorOverlayTheme" in localStorage) &&
+          theme.data === "dark" ||
+          (!theme.data &&
             window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
           // Whenever the user explicitly chooses light mode
-          localStorage.astroErrorOverlayTheme = "dark"
+          actions.setTheme("dark")
         } else {
           // Whenever the user explicitly chooses dark mode
-          localStorage.astroErrorOverlayTheme = "light"
+          actions.setTheme("light")
         }
       })
     </script>

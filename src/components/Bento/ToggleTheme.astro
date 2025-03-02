@@ -23,16 +23,18 @@ import Item from "../Item.astro"
     </div>
   </button>
   <script>
+    import { actions } from "astro:actions"
+
     document.addEventListener("astro:page-load", () => {
       document
         .getElementById("theme-selector")
-        ?.addEventListener("click", () => {
-          if (localStorage.astroErrorOverlayTheme === "dark") {
-            localStorage.astroErrorOverlayTheme = "light"
+        ?.addEventListener("click", async () => {
+          if ((await actions.getTheme()).data === 'dark') {
             document.documentElement.classList.remove("dark")
+            actions.setTheme("light")
           } else {
-            localStorage.astroErrorOverlayTheme = "dark"
             document.documentElement.classList.add("dark")
+            actions.setTheme("dark")
           }
         })
     })
