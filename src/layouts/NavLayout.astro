@@ -5,6 +5,12 @@ import Github from "@/components/Icons/Github.astro"
 import LinkedIn from "@/components/Icons/LinkedIn.astro"
 import Upwork from "@/components/Icons/Upwork.astro"
 import Item from "@/components/Item.astro"
+
+interface Props {
+  transition: string
+}
+
+const { transition }: Props = Astro.props
 ---
 
 <div class="relative mx-auto w-fit pt-28 pb-20">
@@ -57,7 +63,12 @@ import Item from "@/components/Item.astro"
       </a>
     </Item>
   </aside>
-  <slot />
-</div>
+  <main
+    transition:name={transition}
+    class="px-4 py-6 max-w-[90vw] w-[700px] overflow-x-auto bg-[#D9D9D9] dark:bg-[hsl(212,64%,14%)] rounded-[20px] border border-[#0b0e39]"
+  >
+    <slot />
+  </main>
 
-<style></style>
+  <style></style>
+</div>
