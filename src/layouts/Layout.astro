@@ -3,9 +3,6 @@ import "@/styles/global.css"
 import "@fontsource/inter"
 import "@fontsource/geist-mono"
 import { ClientRouter } from "astro:transitions"
-import { actions } from "astro:actions"
-
-console.log(Astro.cookies.get("theme")?.value)
 const theme = Astro.cookies.get("theme")?.value
 ---
 
