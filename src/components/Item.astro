@@ -1,5 +1,9 @@
 ---
-const { color3d = "#0b0e39", transition, hover } = Astro.props
+interface Props {
+  color3d?: string
+  transition?: string
+}
+const { color3d = "#0b0e39", transition } = Astro.props
 ---
 
 {

@@ -1,0 +1,42 @@
+---
+import Item from "@/components/Item.astro"
+import { projects } from "@/data/projects"
+import Layout from "@/layouts/Layout.astro"
+import NavLayout from "@/layouts/NavLayout.astro"
+---
+
+<Layout>
+  <NavLayout transition="experience">
+    <h1
+      class="dark:text-green-300 text-5xl sm:text-7xl font-black w-fit mx-auto mb-7"
+    >
+      Experiencia
+    </h1>
+    <section class="border-t border-[#0b0e394a] py-6 pb-2 px-4">
+      <h2
+        class="Clientes dark:text-yellow-300 text-3xl sm:text-4xl font-black mb-7"
+      >
+        Clientes
+      </h2>
+      <div class="mx-auto w-fit">
+        {
+          projects.clients.map((pj) => (
+            <Item>
+              <div class="w-[200px] dark:bg-[hsl(240,76%,8%)] border dark:border-[hsl(240,76%,8%)]">
+                <img
+                  class="object-bottom w-[250px] mr-6 mb-1"
+                  src={pj.image}
+                  alt="Cortito image"
+                />
+                <div class="p-1">
+                  <h3 class="font-semibold text-lg">{pj.title}</h3>
+                  <p class="line-clamp-2">{pj.description}</p>
+                </div>
+              </div>
+            </Item>
+          ))
+        }
+      </div>
+    </section>
+  </NavLayout>
+</Layout>
