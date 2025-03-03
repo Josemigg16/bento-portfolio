@@ -28,7 +28,9 @@ import DockerIcon from "../Icons/tech/DockerIcon.astro"
 
 <Item>
   <div class="flex flex-col h-full">
-    <div class="relative w-full overflow-hidden h-1/2 p-2">
+    <div
+      class="relative w-full overflow-hidden h-1/2 p-2 flex items-center [&>div]:scale-75 sm:[&>div]:scale-95 lg:[&>div]:scale-100"
+    >
       <div class="icon"><AstroIcon /></div>
       <div class="icon"><ExpressjsIcon /></div>
       <div class="icon"><NextIcon /></div>
@@ -43,7 +45,9 @@ import DockerIcon from "../Icons/tech/DockerIcon.astro"
       <div class="icon"><HTMLIcon /></div>
       <div class="icon"><DockerIcon /></div>
     </div>
-    <div class="goRight relative w-full overflow-hidden h-1/2 p-2">
+    <div
+      class="goRight relative w-full overflow-hidden h-1/2 p-2 flex items-center [&>div]:scale-80 sm:[&>div]:scale-90 md:[&>div]:scale-100"
+    >
       <div class="icon"><MariaDBIcon /></div>
       <div class="icon"><RedisIcon /></div>
       <div class="icon"><FlaskIcon /></div>
@@ -94,7 +98,7 @@ import DockerIcon from "../Icons/tech/DockerIcon.astro"
     right: 100%;
     animation-name: scrollToRight;
   }
-  
+
   .icon:nth-child(1) {
     animation-delay: calc(
       var(--duration) / var(--icons-count) * (var(--icons-count) - 1) * -1
