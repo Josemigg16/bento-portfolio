@@ -22,13 +22,14 @@ const {
   category,
   repo,
   url,
+  slug
 } = Astro.props
 ---
 
 <Layout>
   <NavLayout transition="none" padding={false} backButtonURL="/experience">
-    <div class="">
-      <img class="w-full" src={imageURL} alt="" />
+    <div>
+      <img transition:name={slug} class="w-full rounded-t-[20px]" src={imageURL} alt="" />
     </div>
     <div class="px-4 py-6">
       <hgroup class="-space-y-[5px]">
