@@ -16,9 +16,11 @@ export interface Project {
   title: string
   image: string
   description: string
+  category?: string
   technologies: any[]
   url: string
   repo?: string
+  slug: string
 }
 
 export interface Projects {
@@ -27,71 +29,77 @@ export interface Projects {
   academic: Project[]
 }
 
-export const projects: Projects = {
-  clients: [
-    {
-      title: "Willarp",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
-      image: "/projects/willarp.png",
-      technologies: [AstroIcon, CSSIcon, TailwindIcon, TypeScriptIcon],
-      url: "https://willarp.com",
-    },
-  ],
-  personal: [
-    {
-      title: "Cortito",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
-      image: "/cortito.png",
-      technologies: [
-        AstroIcon,
-        CSSIcon,
-        TailwindIcon,
-        TypeScriptIcon,
-        JavaScriptIcon,
-        NodeIcon,
-        ExpressjsIcon,
-        PostgresIcon,
-        PrismaIcon,
-      ],
-      url: "https://cortito.vercel.com",
-      repo: "https://github.com/Josemigg16/Cortito",
-    },
-    {
-      title: "Secrettito",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
-      image: "/secrettito.png",
-      technologies: [
-        NextIcon,
-        TailwindIcon,
-        ReactIcon,
-        TypeScriptIcon,
-        PostgresIcon,
-        PrismaIcon,
-      ],
-      url: "https://secrettito.vercel.app",
-      repo: "https://github.com/Josemigg16/Secrettito",
-    },
-    {
-      title: "Toppify",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
-      image: "/",
-      technologies: [NuxtIcon, TailwindIcon, TypeScriptIcon],
-      url: "no disponible",
-      repo: "https://github.com/Josemigg16/toppify",
-    },
-  ],
-  academic: [
-    {
-      title: "UFT CHAT",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
-      image: "/",
-      technologies: [NextIcon, TailwindIcon, TypeScriptIcon, DockerIcon],
-      url: "no disponible",
-    },
-  ],
-}
+export const projects: Project[] = [
+  {
+    title: "Willarp",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
+    image: "/projects/willarp.png",
+    technologies: [AstroIcon, CSSIcon, TailwindIcon, TypeScriptIcon],
+    url: "https://willarp.com",
+    slug: "willarp",
+    category: "clients",
+  },
+
+  {
+    title: "Cortito",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
+    image: "/projects/cortito.png",
+    technologies: [
+      AstroIcon,
+      CSSIcon,
+      TailwindIcon,
+      TypeScriptIcon,
+      JavaScriptIcon,
+      NodeIcon,
+      ExpressjsIcon,
+      PostgresIcon,
+      PrismaIcon,
+    ],
+    url: "https://cortito.vercel.com",
+    repo: "https://github.com/Josemigg16/Cortito",
+    slug: "cortito",
+    category: "personal",
+  },
+  {
+    title: "Secrettito",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
+    image: "/projects/secrettito.png",
+    technologies: [
+      NextIcon,
+      TailwindIcon,
+      ReactIcon,
+      TypeScriptIcon,
+      PostgresIcon,
+      PrismaIcon,
+    ],
+    url: "https://secrettito.vercel.app",
+    repo: "https://github.com/Josemigg16/Secrettito",
+    slug: "secrettito",
+    category: "personal",
+  },
+  {
+    title: "Toppify",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
+    image: "/projects/toppify.png",
+    technologies: [NuxtIcon, TailwindIcon, TypeScriptIcon],
+    url: "no disponible",
+    repo: "https://github.com/Josemigg16/toppify",
+    slug: "toppify",
+    category: "personal",
+  },
+
+  {
+    title: "UFT CHAT",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
+    image: "/projects/uft-chat.png",
+    technologies: [NextIcon, TailwindIcon, TypeScriptIcon, DockerIcon],
+    url: "no disponible",
+    slug: "uft-chat",
+    category: "academic",
+  },
+]

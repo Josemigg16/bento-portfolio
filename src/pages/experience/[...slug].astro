@@ -1,0 +1,23 @@
+---
+import { projects, type Project } from "@/data/projects"
+import Layout from "@/layouts/Layout.astro"
+import NavLayout from "@/layouts/NavLayout.astro"
+export const prerender = true
+export const getStaticPaths = async () => {
+  console.log(projects)
+  return projects.map((pj) => ({
+    params: { slug: pj.slug },
+    props: { ...pj },
+  }))
+}
+
+const params = Astro.params
+
+const { title } = Astro.props
+---
+
+<Layout>
+  <NavLayout transition="none">
+    <h1>{title}</h1>
+  </NavLayout>
+</Layout>
