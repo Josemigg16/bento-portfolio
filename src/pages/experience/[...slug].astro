@@ -3,16 +3,9 @@ import Item from "@/components/Item.astro"
 import { projects } from "@/data/projects"
 import Layout from "@/layouts/Layout.astro"
 import NavLayout from "@/layouts/NavLayout.astro"
-export const prerender = true
-export const getStaticPaths = async () => {
-  console.log(projects)
-  return projects.map((pj) => ({
-    params: { slug: pj.slug },
-    props: { ...pj },
-  }))
-}
+const { slug } = Astro.params
 
-const params = Astro.params
+const project = projects.filter((pj) => pj.slug === slug)
 
 const {
   title,
@@ -22,14 +15,23 @@ const {
   category,
   repo,
   url,
-  slug
-} = Astro.props
+} = project[0]
 ---
 
 <Layout>
-  <NavLayout transition="none" padding={false} backButtonURL="/experience">
+  <NavLayout
+    transition="experiencee"
+    padding={false}
+    backButtonURL="/experience"
+  >
     <div>
-      <img loading="lazy" transition:name={slug} class="w-full rounded-t-[20px]" src={imageURL} alt="" />
+      <img
+        loading="lazy"
+        transition:name={slug}
+        class="w-full rounded-t-[20px]"
+        src={imageURL}
+        alt=""
+      />
     </div>
     <div class="px-4 py-6">
       <hgroup class="-space-y-[5px]">
@@ -37,7 +39,7 @@ const {
         <small class="opacity-50">Category: {category}</small>
       </hgroup>
       <p class="mt-3 text-pretty">{description}</p>
-      
+
       <h2 class="mt-4 text-2xl font-bold">Tecnologías</h2>
       <ul class="mt-2 mb-3 flex flex-wrap gap-2 items-center">
         {
