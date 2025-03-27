@@ -18,7 +18,7 @@ export interface Project {
   description: string
   category?: string
   technologies: any[]
-  url: string
+  url?: string
   repo?: string
   slug: string
 }
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     technologies: [AstroIcon, CSSIcon, TailwindIcon, TypeScriptIcon],
     url: "https://willarp.com",
     slug: "willarp",
-    category: "clients",
+    category: "freelance",
   },
 
   {
@@ -86,7 +86,6 @@ export const projects: Project[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
     image: "/projects/toppify.png",
     technologies: [NuxtIcon, TailwindIcon, TypeScriptIcon],
-    url: "no disponible",
     repo: "https://github.com/Josemigg16/toppify",
     slug: "toppify",
     category: "personal",
@@ -98,7 +97,6 @@ export const projects: Project[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam eaque neque necessitatibus quia est ipsum quo repellat molestiae iste doloremque minus impedit similique, illo eius libero magnam vel debitis tenetur?",
     image: "/projects/uft-chat.png",
     technologies: [NextIcon, TailwindIcon, TypeScriptIcon, DockerIcon],
-    url: "no disponible",
     slug: "uft-chat",
     category: "academic",
   },
