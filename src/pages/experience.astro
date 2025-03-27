@@ -14,7 +14,7 @@ import NavLayout from "@/layouts/NavLayout.astro"
     </h1>
     <section
       class="border-t border-[#0b0e394a] py-6 pb-2 px-4 flex flex-wrap justify-center gap-3"
-    > 
+    >
       {
         projects.map((pj) => (
           <div class="w-fit mb-4">
@@ -22,6 +22,7 @@ import NavLayout from "@/layouts/NavLayout.astro"
               <a href={`/experience/${pj.slug}`}>
                 <div class="w-[200px] dark:bg-[hsl(240,76%,8%)] border dark:border-[hsl(240,76%,8%)]">
                   <img
+                    loading="lazy"
                     transition:name={pj.slug}
                     class="object-bottom w-[250px] mr-6 mb-1 rounded-t-[20px]"
                     src={pj.image}
